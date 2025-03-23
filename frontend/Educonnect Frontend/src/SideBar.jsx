@@ -1,49 +1,38 @@
-import {
-  FaHome,
-  FaBook,
-  FaChalkboardTeacher,
-  FaComments,
-  FaBookmark,
-  FaSignOutAlt,
-} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-const SideBar = () => {
+function SideBar() {
   return (
-    <div className="w-64 min-h-screen bg-base-300 text-base-content p-4">
-      <ul className="menu">
+    <div className="w-64 h-screen bg-gray-900 text-white p-4 sticky top-0">
+      <h2 className="text-xl font-bold">EduConnect</h2>
+      <ul className="mt-5 space-y-4">
         <li>
-          <a className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary hover:text-white transition-all">
-            <FaHome /> Home
-          </a>
+          <Link to="/" className="block p-2 rounded hover:bg-gray-700">
+            Home
+          </Link>
         </li>
         <li>
-          <a className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary hover:text-white transition-all">
-            <FaBook /> Subjects
-          </a>
+          <Link to="/subjects" className="block p-2 rounded hover:bg-gray-700">
+            Subjects
+          </Link>
         </li>
         <li>
-          <a className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary hover:text-white transition-all">
-            <FaChalkboardTeacher /> Educators
-          </a>
+          <Link to="/educators" className="block p-2 rounded hover:bg-gray-700">
+            Educators
+          </Link>
         </li>
         <li>
-          <a className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary hover:text-white transition-all">
-            <FaComments /> Discussions
-          </a>
+          <Link to="/discussions" className="block p-2 rounded hover:bg-gray-700">
+            Discussions
+          </Link>
         </li>
         <li>
-          <a className="flex items-center gap-3 p-3 rounded-lg hover:bg-primary hover:text-white transition-all">
-            <FaBookmark /> Bookmarks
-          </a>
-        </li>
-        <li className="mt-auto">
-          <a className="flex items-center gap-3 p-3 rounded-lg text-red-500 hover:bg-red-500 hover:text-white transition-all">
-            <FaSignOutAlt /> Logout
-          </a>
+          <Link to="/bookmarks" className="block p-2 rounded hover:bg-gray-700">
+            Bookmarks
+          </Link>
         </li>
       </ul>
     </div>
   );
-};
+}
 
 export default SideBar;

@@ -1,9 +1,7 @@
 import { useState } from "react";
-import Feed from "./Feed";
 import { FaUserCircle } from "react-icons/fa";
 
-const MainContent = () => {
-  const [posts, setPosts] = useState([]);
+const MainContent = ({ posts, setPosts }) => {
   const [text, setText] = useState("");
   const [file, setFile] = useState(null);
   const [fileType, setFileType] = useState(null);
@@ -49,7 +47,7 @@ const MainContent = () => {
       <fieldset className="p-4 border rounded-lg shadow-md bg-base-200">
         <div className="flex items-center gap-3 mb-3">
           <FaUserCircle className="text-4xl text-gray-500" />
-          <span className="text-lg font-semibold">User</span>
+          <span className="text-lg font-semibold">Ayush Guleria</span>
         </div>
 
         <textarea
@@ -62,7 +60,7 @@ const MainContent = () => {
         {/* File Upload */}
         <div className="flex items-center gap-2 mt-3">
           <label className="btn btn-outline btn-sm cursor-pointer">
-            Upload File
+            Attach 😎
             <input
               type="file"
               accept="image/*, video/*, audio/*, .pdf, .docx, .txt"
@@ -109,9 +107,6 @@ const MainContent = () => {
           Post
         </button>
       </fieldset>
-
-      {/* Display Feed */}
-      <Feed posts={posts} />
     </div>
   );
 };
